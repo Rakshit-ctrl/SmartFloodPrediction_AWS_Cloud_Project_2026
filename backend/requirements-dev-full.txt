@@ -1,0 +1,5 @@
+# Everything needed to run the complete test suite with no skipped tests.
+-r requirements-dev.txt
+-r requirements-ml.txt
+-r requirements-geo.txt
+onnx>=1.16

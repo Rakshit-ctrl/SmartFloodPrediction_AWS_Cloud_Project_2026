@@ -1,0 +1,5 @@
+# Production dependencies for containerized FastAPI + ONNX Runtime serving
+-r requirements.txt
+-r requirements-ml.txt
+-r requirements-geo.txt
+

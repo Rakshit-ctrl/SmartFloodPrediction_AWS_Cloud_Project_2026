@@ -1,0 +1,37 @@
+{
+  "name": "unet-sar2-baseline",
+  "version": "2026-10-28",
+  "architecture": "U-Net",
+  "format": "onnx",
+  "weights_file": "unet_sar2.onnx",
+  "input": {
+    "width": 512,
+    "height": 512,
+    "channels": 2,
+    "normalization": "percentile_sar",
+    "mean": [
+      0.0,
+      0.0
+    ],
+    "std": [
+      1.0,
+      1.0
+    ],
+    "scale": 1.0
+  },
+  "output": {
+    "type": "binary_logits",
+    "threshold": 0.5
+  },
+  "training": {
+    "task": "Water / flood extent segmentation (Track 1 baseline)",
+    "bands": [
+      "Band 1 (VV)",
+      "Band 2 (VH)"
+    ],
+    "best_epoch": 4,
+    "holdout_dice_per_tile": 0.4391,
+    "best_pooled_dice": 0.5113,
+    "notes": "Water/flood extent segmentation baseline trained on Track 1 bands 1 and 2. Per-tile 2-98th percentile normalization. Sentinel values >= 30000 excluded. This model identifies surface water extent in satellite imagery; it is not a future flood forecasting model."
+  }
+}

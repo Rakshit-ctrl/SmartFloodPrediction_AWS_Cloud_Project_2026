@@ -216,3 +216,18 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ClimateRiskFloodPrediction local files and secrets
+.env
+.env.*
+!.env.example
+**/.venv/
+**/venv/
+**/node_modules/
+**/__pycache__/
+**/*.py[cod]
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+**/.pytest_cache/
+frontend/dist/

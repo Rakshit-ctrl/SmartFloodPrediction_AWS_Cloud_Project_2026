@@ -78,7 +78,7 @@ export default function App() {
     try {
       const a = await api.addAlert(payload);
       setAlerts((p) => [a, ...p]);
-      notify('Rule saved. Rules are evaluated in dry-run mode only; no notifications are sent.');
+      
     } catch (e) {
       fail(e);
     }

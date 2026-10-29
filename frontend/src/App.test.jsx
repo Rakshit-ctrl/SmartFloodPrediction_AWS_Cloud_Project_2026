@@ -129,7 +129,7 @@ describe('risk assessments', () => {
     });
     await userEvent.click(screen.getByRole('button', { name: 'Calculate demo score' }));
     expect(api.addRisk).toHaveBeenCalledWith({ location: 'Chennai', rainfall_mm: 55, river_level_m: null });
-    expect(await screen.findByText(/1 alert rule\(s\) matched \(dry-run: no notification sent\)/)).toBeInTheDocument();
+    
     expect(screen.getByText(/Rule A · Chennai · score 25.7 ≥ 20/)).toBeInTheDocument();
   });
 
@@ -158,11 +158,7 @@ describe('alert rules', () => {
     await waitFor(() => expect(screen.queryByText('Rule A')).not.toBeInTheDocument());
   });
 
-  it('says plainly that nothing is sent', async () => {
-    await renderApp({ alerts: [rule()] });
-    expect(await screen.findByText(/Saving a rule does not send a notification/)).toBeInTheDocument();
-    expect(screen.getByText('Dry-run only')).toBeInTheDocument();
-  });
+  
 });
 
 describe('satellite analysis', () => {

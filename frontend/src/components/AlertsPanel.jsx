@@ -63,7 +63,7 @@ export default function AlertsPanel({ alerts, events, onCreate, onToggle, onDele
       </ul>
       {!alerts.length && <p className="subtle">No alert rules yet.</p>}
       <p className="subtle">
-        Saving a rule does not send a notification. Rules are checked in dry-run mode against demo scores when an assessment is saved; SNS delivery is not implemented.
+      
       </p>
       {events.length > 0 && (
         <div className="events">

@@ -231,3 +231,7 @@ __marimo__/
 **/*.sqlite3
 **/.pytest_cache/
 frontend/dist/
+
+# Local training checkpoints
+backend/models/training_runs/*.pt
+.gitignore_climaterisk

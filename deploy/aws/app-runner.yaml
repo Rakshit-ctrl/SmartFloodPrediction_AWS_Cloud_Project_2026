@@ -1,0 +1,20 @@
+version: 1.0
+runtime: python311
+build:
+  commands:
+    build:
+      - pip install --upgrade pip
+      - pip install -r backend/requirements-prod.txt
+run:
+  command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+  network:
+    port: 8000
+    env: APP_PORT
+  env:
+    - name: MODEL_DIR
+      value: backend/models_deployed
+    - name: UPLOAD_MAX_MB
+      value: "16"
+    - name: CORS_ORIGINS
+      value: "*"
+
